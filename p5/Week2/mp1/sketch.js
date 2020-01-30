@@ -4,7 +4,7 @@ var axisX = 0;
 var c1, c2;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight, P2D);
+  createCanvas(800, 800, P2D);
   for(var i=0; i<400; i++){
 		drops[i] = new Drop();
   }
