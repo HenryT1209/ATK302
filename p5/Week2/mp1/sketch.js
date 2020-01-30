@@ -1,96 +1,61 @@
-var drops  = [];
+var drops = [];
 var axisY = 1;
 var axisX = 0;
 var c1, c2;
 
 function setup() {
   createCanvas(800, 800, P2D);
-  for(var i=0; i<400; i++){
-		drops[i] = new Drop();
+  for (var i = 0; i < 400; i++) {
+    drops[i] = new Drop();
   }
   c1 = color(30, 30, 50);
   c2 = color(0, 150);
 }
 
-function draw() {
-  //background(10,20,10,150)
-  setGradient(0, 0, width, height/2, c2, c1, axisY);
-  setGradient(0, height/2, width, height, c1, c2, axisY);
-  noStroke();
-  fill(0);
-  rect(width/2+100, height/2, 5, height);
-  rect(width/2, height/2*1.3, 150, height);
-  for(var x = width/2+10; x <= width/2+140; x += 20) {
-	 for(var y = height/2*1.35; y <= height; y += 20) {
-		fill(200,200,0);
-		rect(x, y, 10, 10);
-	 }
-  }
-  for(var i=0; i<drops.length; i++){
-		drops[i].show();
-		drops[i].move();
-  }
-  frameRate(60);
-}
-
-function setGradient(x, y, w, h, c1, c2, axis){
-  noFill();
-  if(axis == axisY){
-	for(var i = y; i <= y+h; i++){
-	  var inter = map(i, y, y+h, 0, 1);
-	  var c = lerpColor(c1, c2, inter);
-	  stroke(c);
-	  line(x, i, x+w, i);
-	}
-  }
-}
-
-
 //Create thunderbolts
-setInterval(thunder,3500);
-function thunder(){
-	stroke(255,255,180,150);
-	strokeWeight(random(1,4));
-	noFill();
-	frameRate(12);
-	beginShape();
-	vertex(random(0,width),0);
-	vertex(random(0,width),height/10);
-	vertex(random(0,width),height/8);
-	vertex(random(0,width),height/6);
-	vertex(random(0,width),height/4);
-	vertex(width/2+100, height/2);
-	endShape();
+setInterval(thunder, 3500);
+
+function thunder() {
+  stroke(255, 255, 180, 150);
+  strokeWeight(random(1, 4));
+  noFill();
+  frameRate(12);
+  beginShape();
+  vertex(random(0, width), 0);
+  vertex(random(0, width), height / 10);
+  vertex(random(0, width), height / 8);
+  vertex(random(0, width), height / 6);
+  vertex(random(0, width), height / 4);
+  vertex(width / 2 + 100, height / 2);
+  endShape();
 }
 
-/*________________________________*/
-//Drop object constructor
-function Drop(){
-//display drops
-	this.x = random(0,width);
-	this.y = random(-10, height);
-	this.d = 2;
-	this.h = random(2, 10);
-	this.col= map(this.h, 2, 10, 100, 255);
+function Drop() {
+  //display drops
+  this.x = random(0, width);
+  this.y = random(-10, height);
+  this.d = 2;
+  this.h = random(2, 10);
+  this.col = map(this.h, 2, 10, 100, 255);
 
-	this.show = function(){
-		noStroke();
-		fill(this.col,100);
-		ellipse(this.x, this.y, this.d, this.h);
-	}
+  this.show = function() {
+    noStroke();
+    fill(this.col, 100);
+    ellipse(this.x, this.y, this.d, this.h);
+  }
 
-//move object
-	this.vel = 0;
-	this.grv = map(this.h,2,10,3,10);
-	this.off = map(this.h,2,10,height/2,height);
+  //move object
+  this.vel = 0;
+  this.grv = map(this.h, 2, 10, 3, 10);
+  this.off = map(this.h, 2, 10, height / 2, height);
 
-	this.move = function(){
-		this.y += this.vel;
-		this.vel = this.grv;
-		if(this.y > this.off){
-			this.y = -10;
-		}
-	}
+  this.move = function() {
+    this.y += this.vel;
+    this.vel = this.grv;
+    if (this.y > this.off) {
+      this.y = -10;
+    }
+  }
 }
 
 function draw() {
@@ -108,29 +73,29 @@ function draw() {
     fill(0);
     text(s, 10, 10, 600, 150);
 
-  X = mouseY-100
+    X = mouseY - 100
 
-//violet
-fill(100,0,200,X)
-ellipse(503, 319,500,500)
-//indigo
-fill(150,0,200,X)
-ellipse(503, 319,490,490)
-//blue
-fill(0,150,250,X)
-ellipse(503, 319,480,480)
-//green
-fill(20,250,20,X)
-ellipse(503, 319,470,470)
-//yellow
-fill(250,250,0,X)
-ellipse(503, 319,460,460)
-//orange
-fill(250,150,40,X)
-ellipse(503, 319,450,450)
-//red
-fill(240,20,20,X)
-ellipse(503, 319,440,440)
+    //violet
+    fill(100, 0, 200, X)
+    ellipse(503, 319, 500, 500)
+    //indigo
+    fill(150, 0, 200, X)
+    ellipse(503, 319, 490, 490)
+    //blue
+    fill(0, 150, 250, X)
+    ellipse(503, 319, 480, 480)
+    //green
+    fill(20, 250, 20, X)
+    ellipse(503, 319, 470, 470)
+    //yellow
+    fill(250, 250, 0, X)
+    ellipse(503, 319, 460, 460)
+    //orange
+    fill(250, 150, 40, X)
+    ellipse(503, 319, 450, 450)
+    //red
+    fill(240, 20, 20, X)
+    ellipse(503, 319, 440, 440)
 
     fill(0);
     ellipse(588, 300, 110, 110);
@@ -185,7 +150,7 @@ ellipse(503, 319,440,440)
     fill(255);
     ellipse(552, 357, 5, 5);
 
-//arms
+    //arms
     fill(0);
     ellipse(400, 510.6285705566406, 100, 50);
 
@@ -274,12 +239,12 @@ ellipse(503, 319,440,440)
     fill(255);
     ellipse(552, 357, 5, 5);
 
-//arms
+    //arms
     fill(0);
-    ellipse(400, 510.6285705566406, 100, 50);
+    ellipse(450, 510.6285705566406, 100, 50);
 
     fill(0);
-    ellipse(600, 510.6285705566406, 100, 50);
+    ellipse(550, 510.6285705566406, 100, 50);
     //feet black
     fill(0);
     ellipse(566, 594, 100, 100);
