@@ -69,9 +69,11 @@ function draw() {
     background(255)
 
     textSize(20)
-    let s = 'He realized how much he took his life for granted and learned to enjoy it. He gained the ability to spread this vibrancy to others, uplifting the lives of many.                                                                    "Stay Vibrant friends"';
+    let s = 'He realized how much he took his life for granted and learned to enjoy it. He gained the ability to spread this vibrancy to others, uplifting the lives of many. (Move mouse around)                                     "Stay Vibrant friends"';
     fill(0);
     text(s, 10, 10, 600, 150);
+
+noStroke()
 
     X = mouseY - 100
 
@@ -96,6 +98,8 @@ function draw() {
     //red
     fill(240, 20, 20, X)
     ellipse(503, 319, 440, 440)
+
+stroke(1)
 
     fill(0);
     ellipse(588, 300, 110, 110);
