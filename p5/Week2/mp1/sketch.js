@@ -17,7 +17,7 @@ setInterval(thunder, 3500);
 
 function thunder() {
   stroke(255, 255, 180, 150);
-  strokeWeight(random(1, 4));
+  strokeWeight(random(6, 10));
   noFill();
   frameRate(12);
   beginShape();
