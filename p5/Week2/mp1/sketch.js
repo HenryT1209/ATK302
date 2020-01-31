@@ -64,6 +64,15 @@ function draw() {
   strokeWeight(2);
   stroke(0);
 
+  fill(128, 64, 0);
+  rect(125, 300, 40, 350);
+
+  fill(25, 97, 21);
+  arc(520, 660, 1240, 120, PI, TWO_PI);
+
+  fill(50, 168, 82);
+  arc(146, 350, 280, 320, PI, TWO_PI);
+
   if (mouseIsPressed) {
     // this is the "pressed" state
     background(255)
@@ -72,6 +81,15 @@ function draw() {
     let s = 'He realized how much he took his life for granted and learned to enjoy it. He gained the ability to spread this vibrancy to others, uplifting the lives of many. (Move mouse around)                                     "Stay Vibrant friends"';
     fill(0);
     text(s, 10, 10, 600, 150);
+
+    fill(128, 64, 0);
+    rect(125, 300, 40, 350);
+
+    fill(117, 255, 165);
+    arc(520, 660, 1240, 120, PI, TWO_PI);
+
+    fill(101, 252, 81);
+    arc(146, 350, 280, 320, PI, TWO_PI);
 
 noStroke()
 
