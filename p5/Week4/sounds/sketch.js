@@ -23,7 +23,3 @@ function draw() {
   image(san1, width/2, height/2, 900, 500);
 
 }
-
-function touchStarted() {
-  getAudioContext().resume();
-}
