@@ -9,11 +9,11 @@ function draw() {
 
   switch (state) {
     case 0:
-    background(255, 0, 0);
-    fill('white');
-    textSize(100);
-    text("case 0", width / 2, 100);
-    break;
+      background(255, 0, 0);
+      fill('white');
+      textSize(100);
+      text("case 0", width / 2, 100);
+      break;
 
     case 1:
       background(0, 255, 0);
@@ -21,23 +21,24 @@ function draw() {
       textSize(100);
       text("case 1", 100, 100);
       break;
-  }
-  case 1: {
-  background(0, 0, 255);
-  fill('gold');
-  textSize(100);
-  text("case 1", 100, 100);
-  break;
 
+    case 2:
+      background(0, 0, 255);
+      fill('gold');
+      textSize(100);
+      text("case 2", 100, 100);
+      break;
+
+  }
 }
 
-function mouseReleased() {
-  // add one to myState
-  // if myState got past 2, reset it to 0
-  myState;
+  function mouseReleased() {
+    // add one to myState
+    // if myState got past 2, reset it to 0
+    state = state + 1
 
-  if (myState > 2) {
-    myState = 0;
+    if (state > 2) {
+      state = 0;
+    }
+
   }
-
-}
