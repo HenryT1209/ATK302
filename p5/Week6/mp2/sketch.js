@@ -23,10 +23,15 @@ function setup() {
 function draw() {
   // put drawing code here
   textFont(ftr, 25);
-  song1.play();
 
   switch (myState) {
     case 0:
+    background('blue')
+    text("click to start!", 300, 300);
+    break;
+
+
+    case 1:
       image(back1, 400, 400, 800, 800);
       fill(255, 255, 255);
       text("hi friend", 300, 300);
@@ -38,15 +43,16 @@ function draw() {
       ellipse(245, 450, 30, 10)
       ellipse(270, 400, 30, 30)
       ellipse(245, 450, 30, 10)
+  song1.play();
 
       timer = timer + 1;
       if (timer > 700) {
-        myState = 1;
+        myState = 2;
         timer = 0;
       }
       break;
 
-    case 1:
+    case 2:
       image(back1, 400, 400, 800, 800);
       fill(255, 255, 255);
       text("i know things may be tough and overwhelming...", 100, 100);
@@ -59,12 +65,12 @@ function draw() {
 
       timer = timer + 1;
       if (timer > 700) {
-        myState = 2;
+        myState = 3;
         timer = 0;
       }
       break;
 
-    case 2:
+    case 3:
       image(back1, 400, 400, 800, 800);
       fill(255, 255, 255);
       text("but you'll get through it. i know you can", 100, 300);
@@ -77,12 +83,12 @@ function draw() {
 
       timer = timer + 1;
       if (timer > 700) {
-        myState = 3;
+        myState = 4;
         timer = 0;
       }
       break;
 
-    case 3:
+    case 4:
       image(back1, 400, 400, 800, 800);
       fill(255, 255, 255);
       text("here, click this magic red ball to clear your mind", 100, 200);
@@ -98,7 +104,7 @@ function draw() {
 
       break;
 
-    case 4:
+    case 5:
       image(back1, 400, 400, 800, 800);
       fill(255, 255, 255);
       text("isn't that better?", 500, 450);
@@ -117,7 +123,7 @@ function draw() {
 
       break;
 
-    case 5:
+    case 6:
       image(back1, 400, 400, 800, 800);
       fill(255, 255, 255);
       text("i believe in u bud", 300, 150);
@@ -136,8 +142,11 @@ function draw() {
 }
 
 function mouseReleased() {
+  if (myState == 0) {
+    myState = 1;
+  }
 
-  if (myState == 3) {
-    myState = 4;
+  if (myState == 4) {
+    myState = 5;
   }
 }
