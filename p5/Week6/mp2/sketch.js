@@ -83,8 +83,8 @@ function draw() {
       rect(400, 400, 100, 200)
       rect(380, 500, 50, 20)
       rect(480, 500, 50, 20)
-      ellipse(430, 400, 30, 30)
-      ellipse(470, 400, 30, 30)
+      ellipse(430, 400, 20, 30)
+      ellipse(470, 400, 20, 30)
       ellipse(420, 460, 28, 12)
 
       timer = timer + 1;
@@ -102,6 +102,8 @@ function draw() {
       rect(400, 400, 100, 200)
       rect(380, 500, 50, 20)
       rect(480, 500, 50, 20)
+      rect(370, 470, 20, 50)
+      rect(510, 470, 20, 50)
       ellipse(430, 400, 30, 30)
       ellipse(470, 400, 30, 30)
       ellipse(420, 460, 18, 32)
@@ -134,8 +136,8 @@ function draw() {
       fill(255, 255, 255);
       text("i believe in u bud", 300, 150);
       rect(200 + x, 400, 100, 200)
-      rect(180 + x, 500, 50, 20)
-      rect(280 + x, 500, 50, 20)
+      rect(180 + x, 500, 20, 50)
+      rect(280 + x, 500, 20, 50)
       ellipse(230 + x, 430, 30, 2)
       ellipse(270 + x, 430, 30, 2)
       ellipse(220 + x, 460, 38, 4)
@@ -148,6 +150,7 @@ function draw() {
 }
 
 function mouseReleased() {
+
   if (myState == 0) {
     myState = 0.5;
   }
