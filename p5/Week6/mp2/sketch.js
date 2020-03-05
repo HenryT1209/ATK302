@@ -13,6 +13,9 @@ function setup() {
   // put setup code here
   createCanvas(800, 800);
 
+  song1.loop();
+  song1.stop();
+
   ftr = loadFont("fonts/futura.ttf");
 
   imageMode(CENTER);
@@ -30,7 +33,11 @@ function draw() {
     text("click to start!", 300, 300);
     break;
 
+    case 0.5:
+      song1.play();
+      myState = 1
 
+    break;
     case 1:
       image(back1, 400, 400, 800, 800);
       fill(255, 255, 255);
@@ -43,10 +50,9 @@ function draw() {
       ellipse(245, 450, 30, 10)
       ellipse(270, 400, 30, 30)
       ellipse(245, 450, 30, 10)
-  song1.play();
 
       timer = timer + 1;
-      if (timer > 700) {
+      if (timer > 500) {
         myState = 2;
         timer = 0;
       }
@@ -64,7 +70,7 @@ function draw() {
       ellipse(420, 450, 30, 10)
 
       timer = timer + 1;
-      if (timer > 700) {
+      if (timer > 500) {
         myState = 3;
         timer = 0;
       }
@@ -82,7 +88,7 @@ function draw() {
       ellipse(420, 460, 28, 12)
 
       timer = timer + 1;
-      if (timer > 700) {
+      if (timer > 500) {
         myState = 4;
         timer = 0;
       }
@@ -116,8 +122,8 @@ function draw() {
       ellipse(220, 460, 38, 10)
 
       timer = timer + 1;
-      if (timer > 700) {
-        myState = 5;
+      if (timer > 500) {
+        myState = 6;
         timer = 0;
       }
 
@@ -143,7 +149,7 @@ function draw() {
 
 function mouseReleased() {
   if (myState == 0) {
-    myState = 1;
+    myState = 0.5;
   }
 
   if (myState == 4) {
