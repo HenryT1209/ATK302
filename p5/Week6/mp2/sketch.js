@@ -29,15 +29,15 @@ function draw() {
 
   switch (myState) {
     case 0:
-    background('blue')
-    text("click to start!", 300, 300);
-    break;
+      background('blue')
+      text("click to start!", 300, 300);
+      break;
 
     case 0.5:
       song1.play();
       myState = 1
 
-    break;
+      break;
     case 1:
       image(back1, 400, 400, 800, 800);
       fill(255, 255, 255);
