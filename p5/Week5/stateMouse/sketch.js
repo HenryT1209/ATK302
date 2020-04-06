@@ -1,4 +1,4 @@
-var myState = 0
+var myState = 0 ;
 
 function setup() {
   // put setup code here
